@@ -13,7 +13,7 @@ class QueryRequest(BaseModel):
 
 # Initialize the chatbot instance at startup
 chatbot = Chatbot(
-    model_path="./models/llama-3-instruct-8b-sppo-iter3-q4_k_m.gguf",
+    model_path="./models/Llama-3-Instruct-8B-SPPO-Iter3-Q4_K_M.gguf",
     embedding_model_path="./models/mxbai-embed-large-v1-f16.gguf",
     qdrant_path="embeddings",
     collection_name="rag_chunk_500",
