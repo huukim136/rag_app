@@ -43,7 +43,6 @@ class Chatbot:
         """Store the question-answer pair in Qdrant as embeddings."""
         # Create embeddings for both the question and the response combined
         combined_text = f"Q: {question} A: {response}"
-        print(f'Combined text: {combined_text}')
         embedding = self.create_embeddings(combined_text)
 
         # Store the interaction as a point in Qdrant
@@ -77,9 +76,9 @@ class Chatbot:
             limit=limit
         )
 
-        print(f'Document results: {document_results}')
-        print(f'Interaction results: {interaction_results}')
-        print(f'Combined results: {document_results + interaction_results}')
+        # print(f'Document results: {document_results}')
+        # print(f'Interaction results: {interaction_results}')
+        # print(f'Combined results: {document_results + interaction_results}')
 
         return document_results + interaction_results
 
@@ -124,7 +123,6 @@ class Chatbot:
 
         # Step 4: Generate the full context by joining relevant parts
         context = "\n\n".join(context_parts)
-        print(f'Context: {context}')
 
         # Step 5: Generate a response 
         return self.generate_response(context, question)

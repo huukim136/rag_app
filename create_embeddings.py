@@ -6,15 +6,12 @@ from qdrant_client.models import Distance, VectorParams, PointStruct
 import uuid
 import argparse
 
-# import pdb
-
 def chunk(arr_range, chunk_size): 
     arr_range = iter(arr_range) 
     return iter(lambda: list(islice(arr_range, chunk_size)), []) 
 
 
 def create_embedding(file, collection_name):
-# file = 'docs/llama2.txt'
   with open(file, 'r') as f:
       text = f.read()
 
@@ -70,7 +67,7 @@ def create_embedding(file, collection_name):
   ]
 
   operation_info = client.upsert(
-      collection_name="test",
+      collection_name=collection_name,
       wait=True,
       points=points
   )

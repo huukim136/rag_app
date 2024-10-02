@@ -35,8 +35,6 @@ async def ask_question(request: QueryRequest):
         # End measuring time
         time_taken = time.time() - start_time
 
-        print(f'response: {response}')
-
         # Store the question and its response into Qdrant
         chatbot.store_interaction(request.question, response)
 
