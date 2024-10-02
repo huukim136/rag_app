@@ -87,10 +87,12 @@ class Chatbot:
     def generate_response(self, context, question):
         """Generate a response based on the provided context and question."""
 
-        template = """You are a helpful assistant who answers questions using only the provided context.
-        If you don't know the answer, simply state that you don't know.
+        template = """Context information is given below:
 
         {context}
+
+        Given the context information above, now I want you to think step by step to answer the query in a careful manner.
+        In case you don't know the answer, state 'I don't know' or 'I am not sure'.
 
         Question: {question}"""
 
