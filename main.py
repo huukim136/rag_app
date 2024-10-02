@@ -16,8 +16,8 @@ chatbot = Chatbot(
     model_path="./models/llama-3-instruct-8b-sppo-iter3-q4_k_m.gguf",
     embedding_model_path="./models/mxbai-embed-large-v1-f16.gguf",
     qdrant_path="embeddings",
-    # collection_name="rag_full"
-    collection_name="rag_chunk_500"
+    collection_name="rag_chunk_500",
+    tmp_interaction_collection_name="rag_interactions_500"
 )
 
 @app.post("/ask")
@@ -34,6 +34,11 @@ async def ask_question(request: QueryRequest):
 
         # End measuring time
         time_taken = time.time() - start_time
+
+        print(f'response: {response}')
+
+        # Store the question and its response into Qdrant
+        chatbot.store_interaction(request.question, response)
 
          # Return response along with time taken
         return {

@@ -2,7 +2,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import llama_cpp
 from itertools import islice
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct
+from qdrant_client.models import Distance, VectorParams, PointStruct 
 import uuid
 import argparse
 
