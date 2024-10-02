@@ -13,7 +13,7 @@ def chunk(arr_range, chunk_size):
     return iter(lambda: list(islice(arr_range, chunk_size)), []) 
 
 
-def create_embedding(file):
+def create_embedding(file, collection_name):
 # file = 'docs/llama2.txt'
   with open(file, 'r') as f:
       text = f.read()
@@ -26,7 +26,6 @@ def create_embedding(file):
   )
 
   documents = text_splitter.create_documents([text])
-  documents = documents[: 20]
   print(len(documents))   
 
   # Initialize the Llama model for embedding generation
@@ -36,8 +35,7 @@ def create_embedding(file):
     verbose=False
   )
 
-  # batch_size = 100
-  batch_size = 10
+  batch_size = 100
   documents_embeddings = []
   batches = list(chunk(documents, batch_size))
 
@@ -55,7 +53,7 @@ def create_embedding(file):
   # Create collection in Qdrant
   client = QdrantClient(path="embeddings")
   client.create_collection(
-      collection_name="test",
+      collection_name=collection_name,
       vectors_config=VectorParams(size=1024, distance=Distance.COSINE),
   )
 
@@ -83,6 +81,7 @@ def create_embedding(file):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("file", help="input txt file")
+    parser.add_argument("collection_name", help="collection name")
     args = parser.parse_args()
 
-    create_embedding(args.file)
+    create_embedding(args.file, args.collection_name)
