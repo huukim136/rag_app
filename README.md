@@ -72,3 +72,18 @@ If successfull, you will get a response that looks like:
     "time_taken": 50.0
 }
 ```
+
+### References
+<!-- <a id="1">[1]</a>  -->
+<a id="1">[1]</a> 
+[Learn Data With Mark](https://github.com/mneedham/LearnDataWithMark/) 
+
+
+<!-- <a id="2">[2]</a>  -->
+<a id="2">[2]</a> 
+[Qdrant Documentation](https://qdrant.tech/documentation/) 
+
+
+
+<a id="3">[3]</a> 
+[Unstructured Documentation](https://github.com/Unstructured-IO/unstructured) 
