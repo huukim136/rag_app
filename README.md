@@ -32,11 +32,11 @@ python convert.py
 
 #### Step 1: Download checkpoints for embedding model and LLama model
 
-Create a new folder in the current name **_models_**. All the checkpoints that we are going to download will be saved there.
+Create a new folder in the current directory named **_models_**. All the checkpoints that we are going to download will be saved there.
 
 For embedding model: Download the embedding model  **_xbai-embed-large-v1-f16.gguf_** [here](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1/blob/7130e2d16051fdf3e0157e841f8b5a8d0d5e63ef/gguf/mxbai-embed-large-v1-f16.gguf).
 
- For Llama model: You can download Llama model from many resources but here I choose to use **_Llama-3-Instruct-8B-SPPO-Iter3-Q4_K_M.gguf** [here](https://huggingface.co/bartowski/Llama-3-Instruct-8B-SPPO-Iter3-GGUF/tree/main).
+ For Llama model: You can download Llama model from many resources but here I choose to use **_Llama-3-Instruct-8B-SPPO-Iter3-Q4_K_M.gguf_** [here](https://huggingface.co/bartowski/Llama-3-Instruct-8B-SPPO-Iter3-GGUF/tree/main).
 
 #### Step 2: Generate embeddings for the information of the paper
 
