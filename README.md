@@ -64,7 +64,7 @@ uvicorn main:app --reload
 curl -X 'POST'   'http://127.0.0.1:8000/ask'   -H 'Content-Type: application/json'   -d '{"question": "What is novel in the paper Llama 2?"}'
 ```
 
-If successfull, you will get a response that looks like:
+If successful, you will get a response that looks like:
 
 ```
 {
